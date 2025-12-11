@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"/><title>IOC Quick-Check - Configurações</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+body{font-family:Arial;padding:16px;background:#f5f7fb;color:#111}
+label{display:block;margin-top:12px;font-weight:700}
+input{width:100%;padding:8px;margin-top:6px;border-radius:6px;border:1px solid #ccc}
+small{display:block;color:#666;margin-top:6px}
+.btn{margin-top:12px;padding:8px 12px;border-radius:6px;background:#1373e6;color:#fff;border:none}
+</style>
+</head>
+<body>
+  <h2>IOC Quick-Check — Configurações</h2>
+
+  <label>AbuseIPDB API Key</label>
+  <input id="abuseipdb" placeholder="Sua chave AbuseIPDB (opcional)" />
+
+  <label>VirusTotal API Key</label>
+  <input id="virustotal" placeholder="Sua chave VirusTotal (opcional)" />
+
+  <label>URLScan API Key (opcional)</label>
+  <input id="urlscan" placeholder="Sua chave URLScan (opcional)" />
+
+  <label>HaveIBeenPwned API Key (opcional)</label>
+  <input id="hibp" placeholder="Sua chave HIBP (opcional)" />
+
+  <hr style="margin:24px 0;border:none;border-top:1px solid #ddd" />
+
+  <h3 style="margin-top:24px">APIs Ativas</h3>
+  <small style="display:block;margin-bottom:12px;color:#666">Selecione quais APIs serão usadas para validação (reduz sobrecarga)</small>
+  
+  <label style="display:flex;align-items:center;margin-top:8px">
+    <input type="checkbox" id="api_abuseipdb" style="width:auto;margin-right:8px" checked />
+    <span>AbuseIPDB</span>
+  </label>
+  <label style="display:flex;align-items:center;margin-top:8px">
+    <input type="checkbox" id="api_virustotal" style="width:auto;margin-right:8px" checked />
+    <span>VirusTotal</span>
+  </label>
+  <label style="display:flex;align-items:center;margin-top:8px">
+    <input type="checkbox" id="api_talos" style="width:auto;margin-right:8px" checked />
+    <span>Talos Intelligence</span>
+  </label>
+  <label style="display:flex;align-items:center;margin-top:8px">
+    <input type="checkbox" id="api_urlscan" style="width:auto;margin-right:8px" checked />
+    <span>URLScan.io</span>
+  </label>
+  <label style="display:flex;align-items:center;margin-top:8px">
+    <input type="checkbox" id="api_hibp" style="width:auto;margin-right:8px" checked />
+    <span>Have I Been Pwned</span>
+  </label>
+
+  <small>As chaves são salvas localmente no armazenamento do navegador (chrome.storage.local). Não compartilhe-as.</small>
+
+  <div>
+    <button id="save" class="btn">Salvar</button>
+    <button id="clear" class="btn" style="background:#6b7280">Limpar</button>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

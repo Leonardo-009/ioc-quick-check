@@ -1,0 +1,60 @@
+:root{
+  --bg:#0f1720;
+  --card:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#ffb86b;
+  --danger:#ff6b6b;
+  --ok:#4ecdc4;
+  --glass: rgba(255,255,255,0.03);
+}
+html,body{margin:0;padding:0;font-family:Inter,ui-sans-serif,system-ui, -apple-system, 'Segoe UI', Roboto, Arial;background:var(--bg);color:#e6eef6}
+.app{width:420px;padding:12px}
+.app-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.app-header h1{font-size:16px;margin:0}
+.link{color:var(--accent);text-decoration:none;font-size:14px}
+.summary{display:flex;gap:12px;margin-bottom:12px}
+.summary-item{background:var(--glass);padding:8px;border-radius:8px;flex:1;text-align:center}
+.summary-number{font-size:18px;font-weight:700}
+.summary-label{font-size:12px;color:var(--muted)}
+.results{display:flex;flex-direction:column;gap:8px;max-height:380px;overflow:auto;padding-right:4px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;gap:6px}
+.card .top{display:flex;justify-content:space-between;align-items:center}
+.card .ioc{font-weight:700}
+.badge{padding:4px 8px;border-radius:999px;font-size:12px}
+.bad-danger{background:var(--danger);color:#fff}
+.bad-sus{background:#f2c94c;color:#000}
+.bad-ok{background:var(--ok);color:#022b2a}
+.providers-container{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.provider-card{background:rgba(0,0,0,0.2);padding:8px;border-radius:6px;border-left:3px solid var(--accent)}
+.provider-header{font-size:13px;color:var(--accent);margin-bottom:6px;font-weight:600}
+.provider-items{display:flex;flex-direction:column;gap:4px}
+.provider-item{font-size:11px;color:var(--muted);padding-left:8px;line-height:1.4}
+.providers-empty{font-size:11px;color:var(--muted);font-style:italic;padding:8px;text-align:center}
+.reasons{font-size:12px;color:var(--accent);margin-top:8px;padding:8px;background:rgba(255,184,107,0.1);border-radius:6px;line-height:1.5}
+.provider-dashboards{margin-top:8px;padding:0}
+.provider-stats{display:flex;flex-direction:column;gap:8px}
+.provider-dashboard-card{background:rgba(0,0,0,0.2);padding:10px;border-radius:8px;border-left:3px solid var(--accent)}
+.provider-dashboard-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:13px;color:var(--accent);user-select:none}
+.provider-dashboard-link{color:var(--accent);text-decoration:none;font-size:14px;padding:2px 6px;border-radius:4px;background:rgba(255,184,107,0.1);transition:background 0.2s}
+.provider-dashboard-link:hover{background:rgba(255,184,107,0.2)}
+.provider-dashboard-stats{display:flex;flex-direction:column;gap:4px;font-size:11px}
+.stat-row{display:flex;justify-content:space-between;color:var(--muted)}
+.stat-row strong{color:#e6eef6}
+.provider-ioc-list{scrollbar-width:thin;scrollbar-color:var(--accent) rgba(0,0,0,0.3)}
+.provider-ioc-item{display:flex;justify-content:space-between;align-items:center;padding:8px;margin:4px 0;background:rgba(0,0,0,0.2);border-radius:4px;transition:background 0.2s}
+.provider-ioc-item:hover{background:rgba(255,255,255,0.05)!important}
+.expand-icon{display:inline-block;margin-left:4px}
+.provider-dashboard-header:hover{opacity:0.9}
+.btn{background:var(--accent);border:none;padding:8px 12px;border-radius:8px;color:#000;font-weight:700;cursor:pointer;transition:opacity 0.2s}
+.btn:hover:not(:disabled){opacity:0.9}
+.btn:disabled{opacity:0.6;cursor:not-allowed}
+.btn-primary{background:var(--accent);color:#000}
+.control-section{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px;background:rgba(0,0,0,0.2);border-radius:8px;margin-bottom:12px}
+.btn-toggle{background:#dc2626;color:white;border:none;padding:10px 20px;border-radius:8px;font-weight:700;cursor:pointer;transition:all 0.2s;font-size:14px}
+.btn-toggle:hover{opacity:0.9;transform:scale(1.02)}
+.btn-toggle.active{background:#2e7d32}
+.status-indicator{width:12px;height:12px;border-radius:50%;background:#dc2626;transition:background 0.2s}
+.status-indicator.active{background:#2e7d32;box-shadow:0 0 8px rgba(46,125,50,0.5)}
+.app-footer{display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:8px;flex-wrap:wrap}
+.btn-export{font-size:11px}
+#filter-search:focus,#filter-type:focus{outline:2px solid var(--accent);outline-offset:2px}

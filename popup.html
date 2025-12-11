@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>IOC Quick-Check</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>IOC Quick-Check</h1>
+      <a id="opts" class="link">⚙️</a>
+    </header>
+
+    <section class="control-section">
+      <button id="toggle-active" class="btn-toggle">
+        <span id="toggle-text">Ativar</span>
+      </button>
+      <div class="status-indicator" id="status-indicator"></div>
+    </section>
+    
+    <section id="manual-check-section" style="margin-bottom:12px;padding:10px;background:rgba(0,0,0,0.2);border-radius:8px;border:1px solid rgba(255,184,107,0.2)">
+      <div style="margin-bottom:8px">
+        <label style="font-size:12px;color:var(--accent);font-weight:600;display:block;margin-bottom:6px">🔎 Análise Manual</label>
+        <div style="display:flex;gap:6px">
+          <input type="text" id="manual-ioc-input" placeholder="Cole ou digite IP, URL, Hash ou Email aqui..." 
+                 style="flex:1;font-size:12px;padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.1);background:rgba(0,0,0,0.3);color:#e6eef6"
+                 autocomplete="off" />
+          <button id="analyze-manual" class="btn" style="background:var(--accent);color:#000;padding:8px 16px;white-space:nowrap">Analisar</button>
+        </div>
+        <small style="display:block;margin-top:4px;font-size:10px;color:var(--muted)">Exemplo: 192.168.1.1, https://example.com, abc123def456...</small>
+      </div>
+    </section>
+
+    <section id="summary" class="summary">
+      <div class="summary-item">
+        <div class="summary-number" id="malicious">0</div>
+        <div class="summary-label">Maliciosos</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-number" id="scantime">-</div>
+        <div class="summary-label">Último scan</div>
+      </div>
+    </section>
+    
+    <section id="history-section" style="display:none;margin-bottom:12px;padding:8px;background:rgba(0,0,0,0.2);border-radius:8px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <h4 style="font-size:13px;margin:0;color:var(--accent);font-weight:600">📊 Histórico Recente</h4>
+        <button id="toggle-history" style="background:transparent;border:none;color:var(--accent);cursor:pointer;font-size:11px">Mostrar</button>
+      </div>
+      <div id="history-content" style="display:none;max-height:150px;overflow-y:auto"></div>
+    </section>
+
+    <section id="provider-dashboards" class="provider-dashboards">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <h3 style="font-size:16px;margin:0;color:var(--accent);font-weight:600">Dashboards por Origem</h3>
+        <div style="display:flex;gap:6px">
+          <input type="text" id="filter-search" placeholder="🔍 Buscar..." style="font-size:11px;padding:4px 8px;border-radius:6px;border:1px solid rgba(255,255,255,0.1);background:rgba(0,0,0,0.2);color:#e6eef6;width:120px" />
+          <select id="filter-type" style="font-size:11px;padding:4px 8px;border-radius:6px;border:1px solid rgba(255,255,255,0.1);background:rgba(0,0,0,0.2);color:#e6eef6">
+            <option value="">Todos os tipos</option>
+            <option value="ip">IP</option>
+            <option value="domain">Domínio</option>
+            <option value="url">URL</option>
+            <option value="hash">Hash</option>
+            <option value="email">Email</option>
+          </select>
+        </div>
+      </div>
+      <div id="provider-stats" class="provider-stats">
+        <!-- provider stats inserted here -->
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <button id="scan" class="btn btn-primary" disabled>🔍 Scan</button>
+        <button id="export-json" class="btn btn-export" title="Exportar JSON" style="background:#6b7280;padding:8px 10px">📥 JSON</button>
+        <button id="export-csv" class="btn btn-export" title="Exportar CSV" style="background:#6b7280;padding:8px 10px">📥 CSV</button>
+        <button id="clear" class="btn" style="background:#dc2626">🗑️ Limpar</button>
+      </div>
+      <a id="open-options" class="link">⚙️ Configurações</a>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
